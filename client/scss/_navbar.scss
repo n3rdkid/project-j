@@ -1,0 +1,23 @@
+header {
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+nav {
+    padding: 8px 16px;
+    .navbar-nav {
+        .btn {
+            margin: 4px 8px;
+        }
+        .btn-warning {
+            color: #14274e;
+        }
+        .nav-link {
+            margin: 4px 8px;
+        }
+    }
+    .logo {
+        width: 156px;
+        height: 40px;
+    }
+}

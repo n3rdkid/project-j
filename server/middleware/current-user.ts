@@ -8,10 +8,10 @@ interface UserPayload {
   id: string;
   email: string;
 }
-/** 
+/**
  * Augmenting Type definition to Request interface since Request doesn't already contain
  * information about currentUser property so .... req.currentUser doesn't exist
-*/
+ */
 declare global {
   namespace Express {
     interface Request {
@@ -21,7 +21,7 @@ declare global {
 }
 /**
  * This middleware takes the jwt from the current cookie-session, extracts current user and returns it.
-*/
+ */
 const currentUser = (req: Request, res: Response, next: NextFunction) => {
   if (!req.session?.jwt) {
     return next();
