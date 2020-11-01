@@ -1,0 +1,17 @@
+footer {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    .footer-col {
+        margin-bottom: 24px;
+        .footer-heading {
+            font-size: 18px;
+        }
+        .footer-link {
+            text-decoration: none;
+            color: #434343;
+            display: block;
+            padding: 4px;
+            margin-bottom: 4px;
+        }
+    }
+}

@@ -18,6 +18,6 @@ router.post(
   UserController.signUp
 );
 router.post("/signout", UserController.signOut);
-router.get("/currentuser", currentUser, UserController.currentUser);
+router.get("/current-user", currentUser, UserController.currentUser);
 
 export { router as userRouter };
