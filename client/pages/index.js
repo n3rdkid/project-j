@@ -1,14 +1,8 @@
-import buildClient from "../api/build-client";
+import Search from "../components/search";
 
 const Landing = () => {
     return <>
-        <div className="container-xxl">
-            <div className="row">
-                <div className="col">
-                    <h1 class="display-2">Landing Page</h1>
-                </div>
-            </div>
-        </div>
+        <Search />
     </>
 }
 

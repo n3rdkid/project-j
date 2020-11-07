@@ -17,6 +17,24 @@
     }
 }
 
+.search {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    background-color: rgb(209, 208, 208);
+    .tab-content {
+        max-width: 1024px;
+        display: inline-block;
+        background-color: white;
+        border-radius: 8px;
+    }
+}
+
+.search-job-form {
+    border-radius: 8px;
+    padding-top: 16px;
+}
+
 .form-content {
     background-color: white;
     padding: 24px;
