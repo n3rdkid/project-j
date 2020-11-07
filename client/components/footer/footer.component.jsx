@@ -22,7 +22,7 @@ const Footer = ({ currentUser }) => {
     const candidateLinks = [
         {
             label: "Browse Jobs",
-            href: "/"
+            href: "/browse-jobs"
         },
         {
             label: "Pinned Jobs",

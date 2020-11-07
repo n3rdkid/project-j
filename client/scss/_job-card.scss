@@ -1,0 +1,49 @@
+.job-card {
+    padding: 24px;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    &:hover {
+        box-shadow: 0 4px 8px 4px #b3b2b2;
+    }
+    .job-info {
+        flex-basis: 75%;
+        .job-type {
+            span {
+                font-size: 14px;
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+            }
+            margin-bottom: 8px;
+        }
+        .job-title {
+            h2 {
+                font-size: 24px;
+            }
+        }
+        .job-company,
+        .job-location,
+        .job-level {
+            p {
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                margin-bottom: 8px;
+            }
+        }
+        .job-location,
+        .job-level {
+            @media screen and (min-width: 992px) {
+                margin-left: 16px;
+            }
+        }
+        .job-level {
+            p {
+                margin-bottom: 16px;
+            }
+        }
+    }
+    .job-cta {
+        flex-basis: 25%;
+    }
+}

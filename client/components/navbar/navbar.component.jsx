@@ -1,4 +1,3 @@
-import axios from "axios";
 import Link from "next/link";
 import Router from "next/router";
 import useRequest from "../../hooks/use-request"
@@ -21,7 +20,7 @@ const Navbar = ({ currentUser }) => {
         },
         {
             label: "Jobs",
-            href: "/"
+            href: "/browse-jobs"
         },
         {
             label: "Candidates",
