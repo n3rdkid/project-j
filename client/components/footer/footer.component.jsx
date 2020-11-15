@@ -96,7 +96,7 @@ const Footer = ({ currentUser }) => {
                 </div>
             </div>
             <div>
-                <p class="text-center">Copyright &copy; SkillNepal Pvt. Ltd. {new Date().getFullYear()} All rights reserved | Powered by <a className="text-decoration-none" href="https://peuconomia.com/">Peuconomia International Pvt. Ltd.</a> </p>
+                <p className="text-center">Copyright &copy; SkillNepal Pvt. Ltd. {new Date().getFullYear()} All rights reserved | Powered by <a className="text-decoration-none" href="https://peuconomia.com/">Peuconomia International Pvt. Ltd.</a> </p>
             </div>
         </footer>
     )

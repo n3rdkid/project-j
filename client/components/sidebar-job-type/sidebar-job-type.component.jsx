@@ -1,5 +1,6 @@
 
-const JobTypeSidebar = () => {
+const JobTypeSidebar = ({ handleChange }) => {
+    console.log("Re-Rendering Job Sidebar")
     const options = [{
         label: "Part time"
     }, {
@@ -15,12 +16,12 @@ const JobTypeSidebar = () => {
         <label className="form-check-label" htmlFor={label}>
             {label}
         </label>
-        <input className="form-check-input" type="checkbox" name={label} id={label} />
+        <input onChange={handleChange} className="form-check-input" type="checkbox" name="type" value={label} id={label} />
     </div>)
     return (
         <div className="sidebar">
             <h3 className="sidebar-title">Browse category</h3>
-            <form className="">
+            <form>
                 {options}
             </form>
         </div>

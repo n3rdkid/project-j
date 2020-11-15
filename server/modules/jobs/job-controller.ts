@@ -114,7 +114,7 @@ class JobController {
         "Senior Level",
       ],
     } = req.query;
-
+    console.log(req.query);
     const limit = 7;
     const jobs = await Job.find(
       { jobType: { $in: type }, jobLevel: { $in: level } },
