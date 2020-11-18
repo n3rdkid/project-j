@@ -114,14 +114,21 @@ class JobController {
         "Senior Level",
       ],
     } = req.query;
-    console.log(req.query);
     const limit = 7;
-    const jobs = await Job.find(
-      { jobType: { $in: type }, jobLevel: { $in: level } },
-      "jobType jobTitle company location jobLevel expiryDate"
-    )
-      .limit(limit)
-      .skip((page - 1) * limit);
+    const query = Job.find({
+      jobType: { $in: type },
+      jobLevel: { $in: level },
+    });
+    const options = {
+      select: "jobType jobTitle company location jobLevel expiryDate",
+      page,
+      limit,
+    };
+    const queryResult = await Job.paginate(query, options);
+    const jobs = {
+      jobs: queryResult.docs,
+      totalPages: queryResult.totalPages,
+    };
     res.status(200).send(jobs);
   };
 }

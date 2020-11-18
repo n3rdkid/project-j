@@ -24,7 +24,8 @@ const start = async () => {
     app.listen(PORT, () => {
       console.log(`App listening at port :: ${PORT} !!`);
     });
-  } catch {
+  } catch (e) {
+    console.log(e);
     console.log("Failed to launch app");
   }
 };
