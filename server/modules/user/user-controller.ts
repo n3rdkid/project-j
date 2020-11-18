@@ -1,10 +1,11 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { BadRequestError } from "../../errors/bad-request-error";
 import { Password } from "../../services/Password";
 import User from "./user-schema";
+import {mailOptions,transporter} from "../../services/Email"
 class UserController {
-  static signIn = async (req: Request, res: Response, next: NextFunction) => {
+  static signIn = async (req: Request, res: Response) => {
     const { email, password } = req.body;
     const existingUser = await User.findOne({ email });
     if (!existingUser) {
@@ -55,6 +56,24 @@ class UserController {
 
   static currentUser = async (req: Request, res: Response) => {
     res.send({ currentUser: req.currentUser || null });
+  };
+
+  static forgotPassword = async (req: Request, res: Response) => {
+    const { email } = req.body;
+
+    const existingUser = await User.findOne({ email });
+    if (!existingUser) {
+      throw new BadRequestError("Request failed");
+    }
+    mailOptions.to="sauravads123@gmail.com"
+    mailOptions.subject="Password Reset"
+  const token = jwt.sign(
+      {email},
+      process.env.JWT_KEY!
+  );
+       mailOptions.html=`Reset your password at <a href="localhost:5000/api/users/reset/${token}">Click Here</a>`
+    const response=await transporter.sendMail(mailOptions);
+    res.status(200).send({})
   };
 }
 export default UserController;

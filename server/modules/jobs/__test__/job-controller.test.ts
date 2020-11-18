@@ -407,7 +407,7 @@ describe("Get All Jobs", () => {
       })
       .expect(201);
     const { body } = await request(app).get("/api/jobs/1").send({}).expect(200);
-    expect(body).toHaveLength(2);
+    expect(body.jobs).toHaveLength(2);
   });
   9841515304;
   it("Filter and retreve jobs by Job Type", async () => {
@@ -441,7 +441,7 @@ describe("Get All Jobs", () => {
       .query({ type: "Part time" })
       .send({})
       .expect(200);
-    expect(body).toHaveLength(1);
+    expect(body.jobs).toHaveLength(1);
   });
   it("Filter and retreve jobs by Job Level", async () => {
     /**
@@ -474,7 +474,7 @@ describe("Get All Jobs", () => {
       .query({ level: "Senior Level" })
       .send({})
       .expect(200);
-    expect(body).toHaveLength(1);
+    expect(body.jobs).toHaveLength(1);
   });
 
 

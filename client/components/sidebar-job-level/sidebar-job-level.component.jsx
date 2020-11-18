@@ -1,15 +1,13 @@
 
-const JobTypeSidebar = ({ handleChange }) => {
+const JobLevelSidebar = ({ handleChange }) => {
     const options = [{
-        label: "Part time"
+        label: "Internship/Trainee"
     }, {
-        label: "Full time"
+        label: "Entry Level"
     }, {
-        label: "Internship"
+        label: "Intermediate Level"
     }, {
-        label: "Temporary"
-    }, {
-        label: "Freelance"
+        label: "Senior Level"
     }
     ].map(({ label }) => <div className="form-check" key={label}>
         <label className="form-check-label" htmlFor={label}>
@@ -19,7 +17,7 @@ const JobTypeSidebar = ({ handleChange }) => {
     </div>)
     return (
         <div className="sidebar">
-            <h3 className="sidebar-title">Browse category</h3>
+            <h3 className="sidebar-title">Browse Level</h3>
             <form>
                 {options}
             </form>
@@ -28,4 +26,4 @@ const JobTypeSidebar = ({ handleChange }) => {
     )
 }
 
-export default JobTypeSidebar
+export default JobLevelSidebar
