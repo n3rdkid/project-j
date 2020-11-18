@@ -1,5 +1,5 @@
-import mongoose, { Schema, model } from "mongoose";
-
+import { Schema, model } from "mongoose";
+import mongoosePaginate from "mongoose-paginate-v2";
 /**
  * Interface that describes the attributes properties that a (single) job document contains
  */
@@ -51,6 +51,7 @@ const JobSchema = new Schema(
     },
   }
 );
-
+JobSchema.plugin(mongoosePaginate);
 const Job = model("jobs", JobSchema);
+
 export default Job;

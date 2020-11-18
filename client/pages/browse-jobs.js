@@ -6,7 +6,6 @@ import JobTypeSidebar from "../components/sidebar-job-type"
 import Pagination from "../components/pagination/";
 
 const BrowseJobs = () => {
-    console.log("Re-rendering browsejobs")
 
     const handleChange = (e) => {
         let types = type;
@@ -16,11 +15,13 @@ const BrowseJobs = () => {
             delete types[e.target.value]
         }
         setType({ ...types });
+        setPage(1);
     }
     const [jobs, setJobs] = useState([]);
     const [type, setType] = useState({});
     const [level, setLevel] = useState([]);
     const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
 
     const { doRequest, errors } = useRequest({
         url: `http://localhost:5000/api/jobs/${page}`,
@@ -32,9 +33,10 @@ const BrowseJobs = () => {
     });
 
     useEffect(async () => {
-        const data = await doRequest();
-        setJobs(data);
-    }, [type, page])// level])
+        const { jobs, totalPages } = await doRequest();
+        setJobs(jobs);
+        setTotalPages(totalPages)
+    }, [type, page, totalPages])// level])
     return <>
         <div className="container-xxl bg-light pt-5 pb-5">
             <div className="row">
@@ -46,7 +48,7 @@ const BrowseJobs = () => {
                     <JobTypeSidebar handleChange={handleChange} />
                 </div>
             </div>
-            <Pagination page={page} setPage={setPage} />
+            <Pagination totalPages={totalPages} page={page} setPage={setPage} />
         </div>
     </>
 }
