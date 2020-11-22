@@ -18,7 +18,18 @@ router.post(
   UserController.signUp
 );
 router.post("/signout", UserController.signOut);
-router.post("/forgot", UserController.forgotPassword);
+router.post(
+  "/forgot",
+  UserValidations.forgotPassword,
+  validateRequest,
+  UserController.forgotPassword
+);
+router.post(
+  "/reset",
+  UserValidations.resetPassword,
+  validateRequest,
+  UserController.resetPassword
+);
 router.get("/current-user", currentUser, UserController.currentUser);
 
 export { router as userRouter };

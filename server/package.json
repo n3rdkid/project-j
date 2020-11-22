@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "ts-node-dev index.ts",
-        "test": "jest --watchAll --no-cache"
+        "start": "ts-node-dev --respawn --exit-child index.ts",
+        "test": "jest --runInBand --detectOpenHandles --watchAll --no-cache"
     },
     "jest": {
         "preset": "ts-jest",

@@ -1,0 +1,17 @@
+.map-wrapper {
+    @media screen and (max-width: 768px) {
+        margin-top: 36px;
+    }
+    .map-pitch {
+        font-size: 24px;
+        font-weight: 700;
+        font-family: $font-two;
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
+    }
+    .map {
+        margin-top: 16px;
+        width: 100%;
+        min-height: 250px;
+    }
+}

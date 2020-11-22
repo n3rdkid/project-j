@@ -1,13 +1,16 @@
 
+import { useRouter } from 'next/router'
 import buildClient from "../../api/build-client"
 import useRedirect from "../../hooks/use-redirect"
-import SignUp from "../../components/sign-up"
-const SignUpPage = () => {
-    return <section className="user-form bg-light" >
+import ResetPassword from "../../components/reset-password"
+const ResetPasswordPage = () => {
+    const router = useRouter()
+    const { token } = router.query
+    return <section className="sign-in-form bg-light" >
         <div className="container-xxl">
             <div className="row justify-content-center">
                 <div className="col-md-8 col-lg-5">
-                    <SignUp />
+                    <ResetPassword token={token} />
                 </div>
                 <div className="col-6">
 
@@ -16,7 +19,7 @@ const SignUpPage = () => {
         </div>
     </section >
 }
-SignUpPage.getInitialProps = async (context) => {
+ResetPasswordPage.getInitialProps = async (context) => {
 
     const client = buildClient(context);
     const { data } = await client.get("/api/users/current-user");
@@ -28,4 +31,4 @@ SignUpPage.getInitialProps = async (context) => {
 }
 
 
-export default SignUpPage;
+export default ResetPasswordPage;

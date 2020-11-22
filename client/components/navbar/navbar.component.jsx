@@ -32,7 +32,7 @@ const Navbar = ({ currentUser }) => {
         },
         {
             label: "Contact",
-            href: "/"
+            href: "/contact"
         },
     ].map(({ label, href }) => <li key={label}>
         <Link href={href}>

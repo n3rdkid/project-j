@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Link from "next/link"
-import Router from "next/router"
 import useRequest from "../../hooks/use-request";
 
 const ForgotPassword = ({ }) => {
@@ -12,9 +10,9 @@ const ForgotPassword = ({ }) => {
         body: {
             email,
         },
-        // onSuccess: () => {
-        //     Router.push("/")
-        // }
+        onSuccess: () => {
+           alert("Done")
+        }
     });
 
     const handleSubmit = async (e) => {

@@ -1,4 +1,5 @@
-.sign-in-form {
+.contact-form,
+.user-form {
     padding-top: 56px;
     padding-bottom: 56px;
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.05);
@@ -6,14 +7,27 @@
     .form-row {
         margin-bottom: 16px;
     }
-    .forgot-password {
-        font-size: 14px;
-        display: inline-block;
-        text-decoration: none;
-        color: #323232;
-        &:hover {
-            color: rgb(66, 126, 255);
-        }
+}
+
+.form-pitch {
+    font-size: 24px;
+    font-family: $font-two;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.form-lead {
+    max-width: 550px;
+}
+
+.forgot-password {
+    font-size: 14px;
+    display: inline-block;
+    text-decoration: none;
+    color: #323232;
+    &:hover {
+        color: rgb(66, 126, 255);
     }
 }
 

@@ -40,14 +40,14 @@ const Footer = ({ currentUser }) => {
         },
         !currentUser && {
             label: "Create Account",
-            href: "/"
+            href: "/auth/sign-up"
         },
         {
             label: "My Account",
             href: "/"
         }, !currentUser && {
             label: "Sign in",
-            href: "/"
+            href: "/auth/sign-in"
         },
 
     ].filter(linkConfig => linkConfig).map(({ label, href }) => <li key={label}>
@@ -61,8 +61,8 @@ const Footer = ({ currentUser }) => {
                 <div className="row">
                     <div className="col-sm-6 col-lg-4">
                         <div className="footer-col">
-                            <h2 className="footer-heading">Skillhunt JobBoard</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            <h2 className="footer-heading">RojgariBoard</h2>
+                            <p>RojgariBoard is a digital recruitment platform built to help recruit the best candidates for your open positions.</p>
                             <ul className="footer-social list-unstyled">
                                 <li><a href="#"><i className="fa fa-faceboot"></i></a></li>
                                 <li><a href="#"><i className="fa fa-linkedin"></i></a></li>

@@ -20,7 +20,7 @@ const Search = () => {
                         <form>
                                 <div className="row justify-content-center">
                                     <div className="col-sm-6 col-lg-4 mb-3">
-                                        <input type="text" className="form-control" placeholder="eg. Garphic. Web Developer" />
+                                        <input type="text" className="form-control" placeholder="eg. Web Developer" />
                                     </div>
                                     <div className="col-sm-6 col-lg-4 mb-3">
                                         <select className="form-select">
