@@ -74,8 +74,8 @@ const Navbar = ({ currentUser }) => {
                                 <Link href={"#"}>
                                     <a className="dropdown-item" href="#">Dashboard</a>
                                 </Link>
-                                <Link href={"#"}>
-                                    <a className="dropdown-item" href="#">My Profile</a>
+                                <Link href={"/company/profile"}>
+                                    <a className="dropdown-item">My Profile</a>
                                 </Link>
                                 <div className="dropdown-divider"></div>
                                 <button className="dropdown-item" href="#" onClick={handleSignOut}>Sign Out</button>

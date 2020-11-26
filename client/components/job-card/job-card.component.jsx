@@ -6,7 +6,7 @@ const JobCard = ({ jobTitle, jobType, company, jobLevel, location }) => {
                 <div className="job-type"><span className="badge bg-primary">{jobType}</span></div>
                 <div className="job-title"><h2>{jobTitle}</h2></div>
                 <div className="d-flex flex-column flex-lg-row">
-                    <div className="job-company"><p>{company}</p></div>
+                    <div className="job-company"><p>{""}</p></div>
                     <div className="job-location"><p>{location}</p></div>
                     <div className="job-level"><p> {jobLevel} </p></div>
                 </div>

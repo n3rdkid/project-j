@@ -19,6 +19,7 @@ const JobSchema = new Schema(
     company: {
       type: Schema.Types.ObjectId,
       required: true,
+      ref: "company",
     },
     location: {
       type: String,

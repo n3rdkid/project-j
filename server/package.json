@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "ts-node-dev --respawn --exit-child index.ts",
+        "start": "ts-node-dev index.ts",
         "test": "jest --runInBand --detectOpenHandles --watchAll --no-cache"
     },
     "jest": {
@@ -23,7 +23,9 @@
         "@types/jsonwebtoken": "^8.5.0",
         "@types/mongoose": "^5.7.36",
         "@types/mongoose-paginate-v2": "^1.3.8",
+        "@types/multer": "^1.4.4",
         "@types/nodemailer": "^6.4.0",
+        "@types/sharp": "^0.26.1",
         "cookie-session": "^1.4.0",
         "cors": "^2.8.5",
         "express": "^4.17.1",
@@ -33,8 +35,10 @@
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.10.9",
         "mongoose-paginate-v2": "^1.3.11",
+        "multer": "^1.4.2",
         "nodemailer": "^6.4.16",
-        "ts-node-dev": "^1.0.0-pre.65",
+        "sharp": "^0.26.3",
+        "ts-node-dev": "^1.0.0",
         "typescript": "^4.0.3"
     },
     "devDependencies": {

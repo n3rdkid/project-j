@@ -119,10 +119,16 @@ class JobController {
       jobType: { $in: type },
       jobLevel: { $in: level },
     });
+    const populateCompany = {
+      path: "company",
+      select: "name email",
+    };
     const options = {
       select: "jobType jobTitle company location jobLevel expiryDate",
       page,
       limit,
+      lean: true,
+      populate: populateCompany,
     };
     const queryResult = await Job.paginate(query, options);
     const jobs = {

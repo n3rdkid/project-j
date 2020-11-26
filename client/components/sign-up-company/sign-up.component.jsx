@@ -3,11 +3,11 @@ import Link from "next/link"
 import Router from "next/router"
 import useRequest from "../../hooks/use-request";
 
-const SignUp = ({ }) => {
+const SignUpCompany = ({ }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { doRequest, errors } = useRequest({
-        url: "http://localhost:5000/api/users/signup",
+        url: "http://localhost:5000/api/company/sign-up",
         method: "post",
         body: {
             email,
@@ -62,4 +62,4 @@ const SignUp = ({ }) => {
         </form>
     </div>
 }
-export default SignUp;
+export default SignUpCompany;

@@ -1,16 +1,17 @@
 
 import buildClient from "../../api/build-client"
 import useRedirect from "../../hooks/use-redirect"
-import SignUp from "../../components/sign-up"
+import SignUpCompany from "../../components/sign-up-company"
+import SignUpUser from "../../components/sign-up-user"
 const SignUpPage = () => {
     return <section className="user-form bg-light" >
         <div className="container-xxl">
             <div className="row justify-content-center">
                 <div className="col-md-8 col-lg-5">
-                    <SignUp />
+                    <SignUpUser />
                 </div>
                 <div className="col-6">
-
+                    <SignUpCompany />
                 </div>
             </div>
         </div>
