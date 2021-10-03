@@ -10,13 +10,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(
-  cors(
-    {
+  cors({
     origin: "http://localhost:3000",
-    methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
+    methods: ["POST", "PUT", "GET", "DELETE", "OPTIONS", "HEAD"],
     credentials: true,
-  }
-  )
+  })
 );
 
 // Use cookie session

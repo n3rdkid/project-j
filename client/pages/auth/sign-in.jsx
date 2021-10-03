@@ -1,16 +1,17 @@
 
 import buildClient from "../../api/build-client"
 import useRedirect from "../../hooks/use-redirect"
-import SignIn from "../../components/sign-in"
+import SignInUser from "../../components/sign-in-user"
+import SignInCompany from "../../components/sign-in-company"
 const SignInPage = () => {
-    return <section className="sign-in-form bg-light" >
+    return <section className="user-form bg-light" >
         <div className="container-xxl">
             <div className="row justify-content-center">
                 <div className="col-md-8 col-lg-5">
-                    <SignIn />
+                    <SignInUser />
                 </div>
                 <div className="col-6">
-
+                    <SignInCompany />
                 </div>
             </div>
         </div>

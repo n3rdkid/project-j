@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 /**
  * An interface that specifies the current user information
  */
-interface UserPayload {
+export interface UserPayload {
   id: string;
   email: string;
 }
@@ -32,7 +32,6 @@ const currentUser = (req: Request, res: Response, next: NextFunction) => {
       process.env.JWT_KEY!
     ) as UserPayload;
     req.currentUser = payload;
-    return res.send({ currentUser: payload });
   } catch {}
   next();
 };

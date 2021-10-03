@@ -1,0 +1,38 @@
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    background: $light-gray-color;
+    margin-right: 4px;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.social--small {
+    height: 36px;
+    width: 36px;
+}
+
+.social--facebook {
+    @extend .social;
+    &:hover {
+        background-color: #3b5998;
+        i {
+            color: white;
+        }
+    }
+}
+
+.social--linkedin {
+    @extend .social;
+    &:hover {
+        background-color: #0e76a8;
+        i {
+            color: white;
+        }
+    }
+}

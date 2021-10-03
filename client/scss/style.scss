@@ -1,7 +1,20 @@
+@import "variables";
+@import "common";
 @import "navbar";
 @import "form";
 @import "footer";
+@import "tabs";
+@import "job-card";
+@import "map";
+@import "sidebar";
+@import "social-buttons";
 @import "utilities";
 * {
     color: #323232;
+    font-family: $font-one;
+    line-height: 140%;
+}
+
+a {
+    text-decoration: none;
 }

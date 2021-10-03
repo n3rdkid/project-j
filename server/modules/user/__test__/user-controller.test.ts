@@ -129,7 +129,7 @@ describe("Current User", () => {
     const cookie = await global.signIn();
 
     let response = await request(app)
-      .get("/api/users/currentuser")
+      .get("/api/users/current-user")
       .set("Cookie", cookie)
       .send()
       .expect(200);
@@ -139,10 +139,49 @@ describe("Current User", () => {
 
   it("responds with null for non-authenticated user", async () => {
     let response = await request(app)
-      .get("/api/users/currentuser")
-      .send()
+      .get("/api/users/current-user")
+      .send({})
       .expect(200);
 
     expect(response.body.currentUser).toBeNull();
+  });
+});
+
+describe("Forgot password", () => {
+  it("responds with 400 when email is not sent", async () => {
+    return request(app).post("/api/users/forgot").send().expect(400);
+  });
+});
+
+describe("Reset password", () => {
+  it("responds with 400 when token is not provided", async () => {
+    return request(app)
+      .post("/api/users/reset")
+      .send({
+        password: "abc123",
+        confirmPassword: "abc123",
+      })
+      .expect(400);
+  });
+  it("responds with 400 when password is not provided", async () => {
+    return request(app)
+      .post("/api/users/reset")
+      .send({ confirmPassword: "abc123" })
+      .expect(400);
+  });
+  it("responds with 400 when confirm password is not provided", async () => {
+    return request(app)
+      .post("/api/users/reset")
+      .send({ confirmPassword: "abc123" })
+      .expect(400);
+  });
+  it("responds with 400 when confirm password and password do not match", async () => {
+    return request(app)
+      .post("/api/users/reset")
+      .send({
+        password: "abc123",
+        confirmPassword: "123abc",
+      })
+      .expect(400);
   });
 });

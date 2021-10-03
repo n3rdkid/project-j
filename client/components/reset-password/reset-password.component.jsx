@@ -3,41 +3,32 @@ import Link from "next/link"
 import Router from "next/router"
 import useRequest from "../../hooks/use-request";
 
-const SignUp = ({ }) => {
-    const [email, setEmail] = useState("");
+const ResetPassword = ({ token }) => {
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [password, setPassword] = useState("");
+
     const { doRequest, errors } = useRequest({
-        url: "http://localhost:5000/api/users/signup",
+        url: "http://localhost:5000/api/users/reset",
         method: "post",
         body: {
-            email,
+            token,
+            confirmPassword,
             password
         },
         onSuccess: () => {
-            Router.push("/")
+            Router.push("/auth/sign-in")
         }
     });
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         doRequest();
     }
     return <div className="form-content">
-        <h2 className="form-title">Sign Up</h2>
+        <h2 className="form-title">Reset Password</h2>
         <form onSubmit={handleSubmit}>
-
             <div className="form-group">
-                <label> Email Address </label>
-                <input
-                    value={email}
-                    onChange={(e) => {
-                        setEmail(e.target.value);
-                    }}
-                    type="email"
-                    className="form-control"
-                />
-            </div>
-            <div className="form-group">
-                <label> Password </label>{" "}
+                <label>New Password </label>
                 <input
                     value={password}
                     onChange={(e) => {
@@ -47,19 +38,27 @@ const SignUp = ({ }) => {
                     className="form-control"
                 />
             </div>
-            {errors}
-
-            <div className="form-row">
-                <button className="col-4 btn btn-primary" type="submit"> Sign up </button>
-                <button className="offset-1 col-4 btn btn-outline-dark" onClick={() => {
-                    setEmail("");
-                    setPassword("");
-                }} type="reset"> Reset </button>
-            </div>
             <div className="form-group">
-                <div>Already have an account ? <Link href="/auth/sign-in"><a>Sign In</a></Link></div>
+                <label>Confirm Password </label>{" "}
+                <input
+                    value={confirmPassword}
+                    onChange={(e) => {
+                        setConfirmPassword(e.target.value);
+                    }}
+                    type="password"
+                    className="
+                    form-control"
+                />
+            </div>
+            {errors}
+            <div className="form-row">
+                <button className="col-4 btn btn-primary" type="submit"> Change Password </button>
+                <button className="offset-1 col-4 btn btn-outline-dark" onClick={() => {
+                    setPassword("");
+                    setConfirmPassword("");
+                }} type="reset"> Cancel </button>
             </div>
         </form>
     </div>
 }
-export default SignUp;
+export default ResetPassword;

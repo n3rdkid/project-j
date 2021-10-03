@@ -1,4 +1,3 @@
-import axios from "axios";
 import Link from "next/link";
 import Router from "next/router";
 import useRequest from "../../hooks/use-request"
@@ -21,7 +20,7 @@ const Navbar = ({ currentUser }) => {
         },
         {
             label: "Jobs",
-            href: "/"
+            href: "/browse-jobs"
         },
         {
             label: "Candidates",
@@ -33,7 +32,7 @@ const Navbar = ({ currentUser }) => {
         },
         {
             label: "Contact",
-            href: "/"
+            href: "/contact"
         },
     ].map(({ label, href }) => <li key={label}>
         <Link href={href}>
@@ -75,8 +74,8 @@ const Navbar = ({ currentUser }) => {
                                 <Link href={"#"}>
                                     <a className="dropdown-item" href="#">Dashboard</a>
                                 </Link>
-                                <Link href={"#"}>
-                                    <a className="dropdown-item" href="#">My Profile</a>
+                                <Link href={"/company/profile"}>
+                                    <a className="dropdown-item">My Profile</a>
                                 </Link>
                                 <div className="dropdown-divider"></div>
                                 <button className="dropdown-item" href="#" onClick={handleSignOut}>Sign Out</button>
